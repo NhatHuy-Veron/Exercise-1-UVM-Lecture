@@ -1,13 +1,13 @@
 ##########################################################
 ##        Makefile for UVM Simulation and Coverage      ##
-##        Author: Adapted from Example-1                ##
+##        Author: Nhat Huy Nguyen                       ##
 ##########################################################
 
 # ---------------------
 # Configurable Variables
 # ---------------------
-TESTNAME    ?= ahb_base_test
-TOP         ?= testbench
+TESTNAME    ?= fifo_base_test
+TOP         ?= tb_top
 RADIX       = hex
 EXCLUDE_TCL = exclude_coverage.tcl
 
@@ -86,4 +86,29 @@ clean:
 	rm -rf *.ini work transcript *.dbg *.wlf \
 	       $(LOG_DIR) $(WAVE_DIR) $(DB_DIR) $(COV_DIR)
 
-.PHONY: all build run run_cov gen_cov wave clean
+# ---------------------
+# Show Help
+# ---------------------
+help:
+	@echo "Makefile for UVM Simulation and Coverage"
+	@echo ""
+	@echo "Available targets:"
+	@echo "  all       : Clean and build (default)"
+	@echo "  build     : Compile design and testbench"
+	@echo "  run       : Run simulation without coverage"
+	@echo "  run_cov   : Run simulation with coverage"
+	@echo "  gen_cov   : Generate coverage reports"
+	@echo "  wave      : Open waveform viewer"
+	@echo "  clean     : Clean generated files"
+	@echo "  help      : Show this help message"
+	@echo ""
+	@echo "Configurable variables:"
+	@echo "  TESTNAME  : Test name (default: fifo_base_test)"
+	@echo "  TOP       : Top module (default: tb_top)"
+	@echo ""
+	@echo "Examples:"
+	@echo "  make run TESTNAME=fifo_base_test"
+	@echo "  make run_cov TESTNAME=my_test"
+	@echo "  make wave TESTNAME=fifo_base_test"
+
+.PHONY: all build run run_cov gen_cov wave clean help

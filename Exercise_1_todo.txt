@@ -1,0 +1,62 @@
+EXERCISE 1: UVM OVERVIEW - CREATING UVM TESTBENCH STRUCTURE
+==================================================
+
+Learning Objectives:
+Understand UVM testbench structure and create basic UVM component classes.
+
+Chapter Coverage:
+• UVM Introduction and Base Classes
+• UVM Component Hierarchy
+• UVM Factory Registration
+• UVM Phases (build_phase)
+
+Exercise Description:
+In this exercise, you will create a basic UVM testbench structure for verifying a FIFO.
+You will focus on creating empty component classes with proper registration and building
+a skeleton UVM environment. This exercise emphasizes understanding the UVM testbench
+structure rather than functionality.
+
+Implementation Steps:
+
+1. Complete the Testbench Top File (tb_top.sv):
+   - Add required UVM include statements
+   - Create a clock generator
+   - Instantiate the FIFO interface
+   - Instantiate the FIFO DUT and connect to interface
+   - Configure UVM config_db to pass interface to components
+   - Start UVM test
+
+2. Complete the FIFO Interface (fifo_if.sv):
+   - Define interface with DATA_WIDTH parameter
+   - Add clock input to the interface
+   - Define reset and data signals
+   - Create appropriate modports for DUT and TB
+
+3. Create UVM Component Classes:
+   - Create transaction class (fifo_transaction)
+   - Create agent components (fifo_agent, fifo_driver, fifo_monitor)
+   - Create environment class (fifo_environment)
+   - Create test class (fifo_base_test)
+   
+4. Register Components with Factory:
+   - Add `uvm_component_utils macro to component classes
+   - Add `uvm_object_utils macro to transaction class
+
+5. Create Constructor and Build Phase:
+   - Add constructors to all components
+   - Include empty build_phase method for component classes
+
+Expected Results:
+✓ Testbench top file is properly completed
+✓ FIFO interface with proper signals and modports is implemented
+✓ All component classes compile without errors
+✓ Basic UVM structure is established
+✓ Component registration with factory is correctly implemented
+
+Key Learning Points:
+• Understanding UVM testbench structure and integration with RTL
+• Understanding UVM component hierarchy
+• Learning factory registration process
+• Creating basic UVM class structure
+• Understanding UVM's modular architecture
+• Learning how to pass interfaces to UVM components

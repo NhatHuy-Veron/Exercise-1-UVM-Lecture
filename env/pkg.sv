@@ -3,12 +3,14 @@
 package pkg;
   import uvm_pkg::*;
 
-  `include "../model/ahb_environment/ahb_transaction.sv"
-  `include "../seq/ahb_sequencer.sv"
-  `include "../model/ahb_environment/ahb_driver.sv"
-  `include "../model/ahb_environment/ahb_monitor.sv"
-  `include "../model/ahb_environment/ahb_agent.sv"
-  `include "../model/ahb_environment/ahb_scoreboard.sv"
-  `include "../model/ahb_environment/ahb_environment.sv"
-  `include "../tests/ahb_base_test.sv"
+  // Include all UVM component files
+  `include "../model/fifo_environment/fifo_transaction.sv"
+  `include "../seq/fifo_sequencer.sv"
+  `include "../seq/fifo_sequence.sv"
+  `include "../model/fifo_environment/fifo_driver.sv"
+  `include "../model/fifo_environment/fifo_monitor.sv"
+  `include "../model/fifo_environment/fifo_agent.sv"
+  `include "../model/fifo_environment/fifo_scoreboard.sv"
+  `include "../model/fifo_environment/fifo_environment.sv"
+  `include "../tests/fifo_base_test.sv"
 endpackage: pkg

@@ -34,7 +34,8 @@ Implementation Steps:
 
 3. Create UVM Component Classes:
    - Create transaction class (fifo_transaction)
-   - Create agent components (fifo_agent, fifo_driver, fifo_monitor)
+   - Create sequence class (fifo_sequence)
+   - Create agent components (fifo_agent, fifo_driver, fifo_monitor, fifo_sequencer)
    - Create environment class (fifo_environment)
    - Create test class (fifo_base_test)
    

@@ -8,6 +8,11 @@
 // 4. Configure the UVM environment and start the test
 
 module tb_top;
+  // Import UVM package
+  import uvm_pkg::*;
+  import pkg::*;
+  `include "uvm_macros.svh"
+  
   // Clock and reset generation
   logic clk;
   
